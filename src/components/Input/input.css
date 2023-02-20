@@ -1,0 +1,45 @@
+.input-box {
+  position: relative;
+  min-width: 250px;
+}
+.input-box input {
+  font-size: 1em;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  border-radius: 5px;
+  outline: none;
+  color: #fff;
+  font-family: "Poppins", sans-serif;
+  transition: 0.5s ease-in-out;
+}
+
+.input-box input.is-uppercase {
+  text-transform: uppercase;
+}
+
+.input-box span {
+  position: absolute;
+  left: 0;
+  padding: 10px;
+  pointer-events: none;
+  font-size: 1em;
+  color: rgba(255, 255, 255, 0.25);
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+  transition: 0.5s ease-in-out;
+}
+
+.input-box input:focus ~ span,
+.input-box input:not([value=""]) ~ span {
+  color: #fff;
+  transform: translateY(-25px);
+  padding: 0 10px;
+  letter-spacing: 0.2em;
+}
+
+.input-box input:focus,
+.input-box input:not([value=""]) {
+  border: 1px solid #fff;
+}

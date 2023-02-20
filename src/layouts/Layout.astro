@@ -1,6 +1,6 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -8,57 +8,58 @@ const { title } = Astro.props;
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/img/logo.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<div class="container">
-			<slot />
-		</div>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/img/logo.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <div class="container">
+      <slot />
+    </div>
+  </body>
 </html>
 <style is:global>
-	@import '../assets/fonts/font.css';
+  @import "../assets/fonts/font.css";
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap");
 
-	:root {
-		--accent: 124, 58, 237;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			#da62c4 30%,
-			white 60%
-		);
-	}
-	* {
-		box-sizing: border-box;
-	}
-	html {
-		font-family: 'Colfax', system-ui, sans-serif;
-		background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
-		background-size: 400% 400%;
-		animation: animate-background 10s infinite ease-in-out;
-		color: #fff;
-	}
+  :root {
+    --dark-purple-extra-sm: "#2E1767";
+    --dark-purple-sm: "#270D67";
+    --dark-purple-md: "#0F0034";
+    --dark-purple-lg: "#0D002B";
 
-	.container {
-		max-width: 768px;
-		width: 100%;
-		margin: 0 auto;
-	}
+    --dark-blue-md: "#111E38";
+    --dark-blue-lg: "#040A15";
+  }
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    font-family: "Colfax", system-ui, sans-serif;
+    background: linear-gradient(-45deg, #833ab4, #fd1d1d, #fcb045);
+    /* background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab); */
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    color: #fff;
+  }
 
-	@keyframes animate-background {
-		0% {
-			background-position: 0 50%;
-		}
-		50% {
-			background-position: 100% 50%;
-		}
-		100% {
-			background-position: 0 50%;
-		}
-	}
+  .container {
+    max-width: 768px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
 </style>
